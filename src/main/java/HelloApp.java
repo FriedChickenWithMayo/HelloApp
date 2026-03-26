@@ -1,22 +1,20 @@
 /* HelloApp.java - Simple Application that prints "Hello World" into console
  * @author jigmeepaotamang
- * @version 5.0
+ * @version 6.0
  * @since UC1
  * */
 public class HelloApp {
     public static void main(String[] args) {
         StringBuilder nameBuilder = new StringBuilder();
-        String finalNames;
-        boolean first = true; 
-        for (String s : args) { 
-          if (!first) {
-                nameBuilder.append(", ");
-            }
-            nameBuilder.append(s);
-            first = false;
+        String names = ""; 
+        for (String name : args) { 
+            nameBuilder.append(name).append(", ");
         }
 
-        finalNames = nameBuilder.toString();
-        System.out.println("Hello, " + finalNames + "!");
+        if (nameBuilder.length() > 0) {
+            names = nameBuilder.substring(0, nameBuilder.length() - 2);
+        }
+
+        System.out.println("Hello, " + names + "!");
     }
 }
